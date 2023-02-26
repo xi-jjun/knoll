@@ -34,3 +34,6 @@
 knoll.iml
 .ruby-version
 .gitattributes
+
+.env
+db/schema.rb
