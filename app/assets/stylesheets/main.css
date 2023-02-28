@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import "signup.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: large;
+  font-family: 'Jua', sans-serif;
+  /*background-image: url("https://cdn.pixabay.com/photo/2015/05/05/09/42/paper-753508_960_720.jpg");*/
+}
+
