@@ -22,6 +22,11 @@
   </head>
 
   <body>
+    <!-- 로그인, 회원가입 화면에서는 nav bar 노출 X -->
+    <% unless ['Users::SessionsController', 'Users::RegistrationsController'].include?(controller.class.to_s) %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
