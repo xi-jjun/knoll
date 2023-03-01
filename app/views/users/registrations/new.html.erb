@@ -1,0 +1,71 @@
+<div class="sign-up-wrapper w-auto">
+  <div class="row justify-content-center">
+    <div class="col card-main">
+      <div class="card-front">
+        <p>더 높은 곳으로,</p>
+        <p>지금 같이 올라갈래? Go→</p>
+      </div>
+
+      <div class="card card-back sign-up-container">
+        <div class="card-header sign-up-title text-white">
+          <h4 class="mb-0">'동산'과 같이하기 - 회원가입</h4>
+        </div>
+
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="mb-3">
+              <%= f.label :email, class: 'form-label' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '이메일을 입력해주세요.', class: 'form-control' %>
+            </div>
+
+            <div class="mb-3 row">
+              <div class="col">
+                <%= f.label :name, 'Name', class: 'form-label' %>
+                <%= f.text_field :name, autofocus: true, placeholder: '이름을 입력해주세요.', class: 'form-control' %>
+              </div>
+
+              <div class="col">
+                <%= f.label :display_name, 'Nickname', class: 'form-label' %>
+                <%= f.text_field :display_name, autofocus: true, placeholder: '닉네임을 입력해주세요', class: 'form-control' %>
+                <%#= link_to '닉네임 중복확인', '', class: 'btn-secondary btn' %>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :password, 'Password', class: 'form-label' %>
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: '비밀번호를 입력해주세요', class: 'form-control' %>
+            </div>
+
+            <div class="mb-3">
+              <%= f.label :password_confirmation, 'Password Confirmation', class: 'form-label' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '비밀번호 확인', class: 'form-control' %>
+            </div>
+
+            <%= f.submit "동산 회원가입!", class: 'sign-up-btn sign-up-btn-hover w-100' %>
+            <%= link_to "동산 올라가기 - 로그인", new_session_path(resource_name), class: 'login-btn login-btn-hover w-100' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    // card flip animation
+    $(".card-main").click(function (event) {
+      let element = event.currentTarget;
+      // 이미 로그인 창이 열렸다면 더 이상 flip 되지 않도록 설정
+      if (element.style.transform == "rotateY(180deg)") {
+        return;
+      }
+
+      element.style.transform = element.style.transform == "rotateY(180deg)" ? "rotateY(0deg)" : "rotateY(180deg)";
+
+      // 바로 사라지면 애니메이션이 안보이기에 0.2초 후 사라지도록 설정
+      setTimeout(function () {
+        $(".card-front").remove();
+      }, 200);
+    });
+  });
+</script>

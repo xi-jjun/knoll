@@ -1,0 +1,88 @@
+.sign-up-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /*width: 300px;*/
+}
+
+.sign-up-container {
+  box-shadow: 2px 2px 7px 1px wheat;
+  /*margin-top: 250px;*/
+}
+
+.sign-up-title {
+  background-color: #79CF9F;
+}
+
+.sign-up-btn {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #79CF9F;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  transition: all 0.8s, color;
+}
+
+.sign-up-btn:hover {
+  color: #FFFF89;
+}
+
+.sign-up-btn-hover:hover {
+  box-shadow: 550px 0 0 0 rgba(0, 0, 0, 0.2) inset,
+  -550px 0 0 0 rgba(0, 0, 0, 0.2) inset;
+}
+
+.login-btn {
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFF89;
+  padding-top: 8px;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  transition: all 0.8s, color;
+}
+
+.login-btn:hover {
+  color: #79CF9F;
+}
+
+.login-btn-hover:hover {
+  box-shadow: 550px 0 0 0 rgba(0, 0, 0, 0.1) inset,
+  -550px 0 0 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+.card-main {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+}
+
+.card-front {
+  /*border: 2px solid black;*/
+  color: #79CF9F;
+  height: 300px;
+  margin-top: 300px;
+  /*background-color: #79CFFF;*/
+}
+
+.card-front > p {
+  font-size: xxx-large;
+}
+
+.card-back {
+  /*border: 2px solid black;*/
+  transform: rotateY(180deg);
+}
