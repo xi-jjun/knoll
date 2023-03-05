@@ -7,6 +7,52 @@
   box-sizing: border-box;
   font-size: large;
   font-family: 'Jua', sans-serif;
-  /*background-image: url("https://cdn.pixabay.com/photo/2015/05/05/09/42/paper-753508_960_720.jpg");*/
 }
 
+.hidden {
+  display: none;
+}
+
+.main-img {
+  position: relative;
+}
+
+.main-img-src {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.main-img-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% );
+}
+
+.main-img-text > h1 {
+  color: #666666; /* TODO : 민지추천) 짙은회색으로 */
+  font-size: 150px;
+}
+
+.main-section-1, .main-section-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 40px 20px;
+}
+
+.main-section-1-title, .main-section-2-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main-section-1-paragraph {
+  text-align: center;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.apply-btn {
+  text-align: center;
+  text-decoration: none;
+}
