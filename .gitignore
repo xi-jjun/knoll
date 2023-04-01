@@ -38,3 +38,7 @@ railways.cache
 
 .env
 db/schema.rb
+
+# docker
+docker-compose.yml
+Dockerfile

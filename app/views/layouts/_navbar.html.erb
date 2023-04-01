@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to '동산', welcome_index_path, class: 'navbar-brand mx-4' %>
+  <!--  <a class="navbar-brand mx-4" href="#">동산</a>-->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse flex-row-reverse bd-highlight" id="navbarNav">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to '로그아웃', '', class: 'logout-btn nav-link', remote: true %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to '로그인', new_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      <% end %>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to '질문하기(오카방)', 'https://open.kakao.com/o/szEp4P5e', class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  $(function () {
+    const navBarVisible = $('#navbarNav').is(':visible');
+    if (!navBarVisible) {
+      $('a').addClass('mx-3');
+    } else {
+      $('a').removeClass('mx-3');
+    }
+  });
+
+  $('.logout-btn').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: "/users/sign_out",
+      method: "DELETE",
+      dataType: 'json',
+      success: function (data) {
+        location.reload();
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        console.log(xhr, textStatus, errorThrown);
+      }
+    })
+  });
+</script>
