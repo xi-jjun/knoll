@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :welcome, only: :index
+    resources :users
   end
 
   resources :welcome, only: :index
