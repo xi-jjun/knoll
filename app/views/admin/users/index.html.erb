@@ -1,0 +1,30 @@
+<h1>회원 관리</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">email</th>
+    <th scope="col">이름</th>
+    <th scope="col">닉네임</th>
+    <th scope="col">등급</th>
+    <th scope="col">불참 횟수</th>
+    <th scope="col">불참 횟수(연속)</th>
+    <th scope="col">가입일</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <th scope="row"><%= user.email %></th>
+      <th scope="row"><%= user.name %></th>
+      <th scope="row"><%= user.display_name %></th>
+      <th scope="row"><%= user.rank %></th>
+      <th scope="row"><%= user.absence_cnt %></th>
+      <th scope="row"><%= user.successive_absence_cnt %></th>
+      <th scope="row"><%= user.created_at %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
