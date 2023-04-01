@@ -1,1 +1,60 @@
-hello users!
+<!-- 동아리 대표 사진 -->
+<div class="main-img">
+  <%= image_tag "p_main3.png", class: 'main-img-src' %>
+  <div class="main-img-text hidden">
+    <h1>반가워요!</h1>
+  </div>
+</div>
+
+<!-- 동아리 간단소개 글 -->
+<div class="main-section-1">
+  <h1 class="main-section-1-title">동아리 소개</h1>
+  <p class="main-section-1-paragraph">
+    이것은 동아리 소개 글입니다. 동산은 영국에서 시작하여 동남아를 거쳐서 미국에 도달하기까지 많은 시간이 들지 않았는데 한국에 들어오면서 재미난 여행을 저희는 다녀왔습니다.
+    안녕하세요. 반갑습니다. 잘지내세요?
+    test 동아리 소개 글.
+    테스트 동아리 소개 글입니다. 추가 작성을 해주시길 바랍니다.
+  </p>
+</div>
+
+<div class="main-section-2">
+  <h1 class="main-section-2-title">지원하러 가기</h1>
+  <%= link_to 'Go! →', 'https://forms.gle/rrucgTcK2CYEgmbW6', class: 'apply-btn' %>
+</div>
+
+<script>
+  $(document).bind('contextmenu', function () {
+    return false;
+  })
+
+  $(document).bind('selectstart', function () {
+    return false;
+  });
+
+  $(document).bind('dragstart', function () {
+    return false;
+  });
+
+  $('.main-img').click(function () {
+    const $mainImageSrc = $('.main-img-src');
+    // 투명도가 설정됐다면 원래대로 1로 변경
+    if ($mainImageSrc.css('opacity') == 0.3) {
+      // 원래대로 투명도 1로 변경
+      $mainImageSrc.animate({
+        opacity: '1'
+      }, 200, function () {
+        $('.main-img-text').fadeOut(50, function () {
+          $('.main-img-text').addClass('hidden');
+        });
+      });
+    } else {
+      $mainImageSrc.animate({
+        opacity: '0.3'
+      }, 300, function () {
+        $('.main-img-text').fadeIn(400, function () {
+          $('.main-img-text').removeClass('hidden');
+        });
+      });
+    }
+  });
+</script>

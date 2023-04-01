@@ -19,9 +19,19 @@
 
     <!-- custom css -->
     <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+
+    <!-- 나눔 고딕 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <!-- 로그인, 회원가입 화면에서는 nav bar 노출 X -->
+    <% unless ['Users::SessionsController', 'Users::RegistrationsController'].include?(controller.class.to_s) %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
